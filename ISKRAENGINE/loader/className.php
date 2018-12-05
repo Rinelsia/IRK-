@@ -1,5 +1,6 @@
 <?php 
 return[
-	"app/controllers/controller" => __DIR__."../app/controllers/controller"
+	"app/controllers" => DIR."/app/controllers/controller.php",
+	"app/modules" => DIR."/app/modules/createView.php"
 ]
  ?>

@@ -1,15 +1,20 @@
 <?php 
-
+namespace app\modules;
+use app;
 /**
  * 
  */
-class ClassName extends AnotherClass
+class echoView
 {
 	
-	function __construct(argument)
+	
+	// 
+	function echoViewStr() 
 	{
-		# code...
+		echo "<br><p style='color:green'>Отображение из module  под управлением Controller</p>";
 	}
 	
 }
+// $cont = new controllers;
+// $cont->constant();
  ?>

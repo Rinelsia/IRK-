@@ -8,8 +8,9 @@ $opd = opendir(DIR);
 var_dump($opd);
 var_dump(dir(DIR));
 var_dump(scandir(DIR, 1));
-
+// Создает пути каталогов для поиска файлов и классов для автозагрузки
 $put = DIR;
+// 
 function Katalog ($kat){
 	$katalog_dir = scandir($kat, 1);
 	foreach ($katalog_dir as $key => $value) {

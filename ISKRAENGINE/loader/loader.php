@@ -1,13 +1,13 @@
 <?php 
 
 $className = require_once __DIR__."\className.php";
-
-var_dump($className);
+$path_arr = [];
+// var_dump($path_arr);
 // открывает файлы, пути описаны в className
 $opd = opendir(DIR);
-var_dump($opd);
-var_dump(dir(DIR));
-var_dump(scandir(DIR, 1));
+// var_dump($opd);
+// var_dump(dir(DIR));
+// var_dump(scandir(DIR, 1));
 // Создает пути каталогов для поиска файлов и классов для автозагрузки
 $put = DIR;
 // 
@@ -19,15 +19,17 @@ function Katalog ($kat){
 		}else{
 			$DIR = $kat.'/'.$value;
 			var_dump(filetype($DIR));
+			
+			
 			echo "<br><p style='color:ff1200'>$DIR</p><br>";
 		}
 
-		// if(filetype($DIR) =="dir"){
-		// 	scandir($DIR, 1);
-		// }
+		if(filetype($DIR) =="file"){
+			$path_arr[] = $DIR;
+		}
 	}
 
-
+	var_dump($path_arr);
 }
 Katalog($put);
 

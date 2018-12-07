@@ -25,11 +25,22 @@ function Katalog ($kat){
 		}
 
 		if(filetype($DIR) =="file"){
+			$path_arr_file = [
+
+				$value => $DIR
+			];
+		}elseif(filetype($DIR)=="dir"){
 			$path_arr[] = $DIR;
 		}
+
 	}
 
 	var_dump($path_arr);
+}
+function opDir($arr){
+	foreach ($arr as $key => $value) {
+		Katalog($value);
+	}
 }
 Katalog($put);
 

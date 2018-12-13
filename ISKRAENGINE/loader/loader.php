@@ -13,20 +13,20 @@ $className = require_once __DIR__."\className.php";
 class loader 
 {
 	
-	static $arr_files = [];
-	static $arr_dir = [''];// массив путей, сюда записываются пути каждого каталога, куда переходит
-	static $path;
+	public $arr_files = [];
+	public $arr_dir;// массив путей, сюда записываются пути каждого каталога, куда переходит
+	public $path;
 	// const DIR = "../".__DIR__;
 
 	function arrPath(){
-		if ($this->$path == NULL) {
+		if ($this->path == NULL) {
 			# code...
-			$this->$path = DIR;
+			$this->path = DIR;
 			$this->arrDir();
 		}else{
-			foreach ($this->$arr_dir as $key => $value) {
+			foreach ($this->arr_dir as $key => $value) {
 				# code...
-				$this->$path =$value;
+				$this->path =$value;
 				$this->arrDir();
 			}
 		}
@@ -34,33 +34,30 @@ class loader
 
 	function classPath(){
 		$this->arrPath();
-		var_dump($this->$path);
 		
-		do {
-			# code...
-			$this->arrPath();
-			$n++;
-		} while ($n<2);
-		var_dump($this-$arr_dir);
-		// var_dump($this->$arr_files)
-		var_dump($path);
+		
+		// do {
+		// 	# code...
+		// 	$this->arrPath();
+		// 	$n++;
+		// } while ($n<2);
+		// var_dump($this->path);
+		var_dump($this->arr_dir);
+		// var_dump($this->arr_files);
+		// var_dump($path);
 	}
 
 	function arrDir(){
-		if($path_arr_dir = scandir($this->$path, 1)){
+		if($path_arr_dir = scandir($this->path, 1)){
 			foreach ($path_arr_dir as $key => $value) {
 				# code...
 				if (filetype($value) == "file") {
 					# code...
-					// $this->$arr_files[$value] = $this->$path."/".$value;
+					$this->arr_files[$value] = $this->path."/".$value;
 				}else{
-					$arr=$this->$arr_dir;
-					var_dump($arr);
-					$arr[] =  $this->$path."/".$value;
-					$this->$arr_dir = $arr;
-					// var_dump($arr);
-					// var_dump($this->$arr_dir);
-					// $this->$arr_dir = array_push($this->$arr_dir, $this->$path."/".$value);
+
+					$this->arr_dir[] = $this->path."/".$value;
+
 				}
 			}
 			return "true";

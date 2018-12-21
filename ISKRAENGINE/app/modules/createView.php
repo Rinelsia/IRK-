@@ -1,17 +1,17 @@
 <?php 
-namespace app\modules;
-use app;
+// namespace app\modules;
+// use app;
 /**
  * 
  */
-class echoView
+class createView
 {
 	
 	
 	// 
 	function echoViewStr() 
 	{
-		echo "<br><p style='color:green'>Отображение из module  под управлением Controller</p>";
+		echo "<br><p style='color:#3f45af'>Отображение из module  под управлением Controller</p>";
 	}
 	
 }

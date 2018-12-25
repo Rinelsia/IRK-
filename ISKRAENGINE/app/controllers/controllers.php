@@ -9,6 +9,7 @@ class controllers
 		echo "<br><p style='color:red'>Подключен Controller</p>";
 		$echo = new createView;
 		$echo->echoViewStr();
+		(new parseURL)->globServ();
 	}
 }
 

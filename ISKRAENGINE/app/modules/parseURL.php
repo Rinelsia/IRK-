@@ -1,18 +1,19 @@
 <?php 
 /**
-* класс обработки запросов от клиента. 
-Обработка урл строки
+* 
+* Класс обработки запросов от клиента. 
+* Обработка урл строки
+* Получение значения названия адреса. Не приписывается название сайта(название хоста)
 */
 class parseURL 
 {
 	
-	public $server_url;
-	function globServ(){
-		// var_dump($_SERVER);
-		var_dump($_GET);
-		$uri_request = ($_SERVER["REQUEST_URI"] === "/")? "index": $_SERVER["REQUEST_URI"];
+	public static $server_url;
 
-		echo "<p style='color:red'>$uri_request</p>";
+	function globServ(){
+		$parse_url = ($_SERVER["REQUEST_URI"] === "/")? "index": $_SERVER["REQUEST_URI"];
+		self::$server_url = $parse_url;
+		echo "<p style='color:red'>$this->server_url</p>";
 	}
 }
  ?>

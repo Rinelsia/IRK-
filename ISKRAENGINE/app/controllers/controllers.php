@@ -5,6 +5,12 @@ class controllers
 {
 	public $arr_view;// массив набора файлов view где ключ - имя страницы
 	public static $arr_key_url; // преременная названия вкладки страницы, или названия страницы. Является ключем массива подключаемых видов view
+	public static $arr_controller = [
+		"index" => $view = [
+			"menu"=>"menuView",
+			"content" => "contentView"
+		]
+	];
 	function controller() 
 	{
 		echo "<br><p style='color:red'>Подключен Controller</p>";
@@ -18,6 +24,9 @@ class controllers
 		echo "url - ";
 		var_dump(self::$arr_key_url);
 	}
+
+
+	
 }
 
  ?>

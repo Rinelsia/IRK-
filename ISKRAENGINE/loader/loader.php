@@ -1,5 +1,7 @@
 <?php 
+// Преработать автозагрузчик
 // переменная начала отсчета старта времени выполнения скрипта
+
 $time_start = microtime(true);
 // 
 $className = require_once __DIR__."\className.php";

@@ -7,11 +7,13 @@
 class createView
 {
 	
-	public $arr_view;
+	public static $arr_view_mod;
 	// 
 	function echoViewStr() 
 	{
-		echo "<br><p style='color:#3f45af'>Отображение из module  под управлением Controller</p>";
+		self::$arr_view_mod = controllers::$arr_view;
+		echo "<br><p style='color:#3f45af'>Отображение из module  под управлением Controller<br> массив файлов отображения страницы - </p>";
+		var_dump(self::$arr_view_mod);
 		foreach ($variable as $key => $value) {
 			# code...
 		}

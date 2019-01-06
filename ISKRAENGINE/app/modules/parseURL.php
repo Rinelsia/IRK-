@@ -11,6 +11,7 @@ class parseURL
 	public static $server_url;
 
 	function globServ(){
+		echo "Подключен parseURL";
 		$parse_url = ($_SERVER["REQUEST_URI"] === "/")? "index": $_SERVER["REQUEST_URI"];
 		self::$server_url = $parse_url;
 		echo "<p style='color:red'>$this->server_url</p>";

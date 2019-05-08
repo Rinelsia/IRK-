@@ -1,7 +1,5 @@
 <?php 
-// Преработать автозагрузчик
 // переменная начала отсчета старта времени выполнения скрипта
-
 $time_start = microtime(true);
 // 
 $className = require_once __DIR__."\className.php";
@@ -55,15 +53,19 @@ function fileMap($arr_path){
 		return $arr_file_dir;
 	}
 }
+
+$arr_path = fileMap($arr_path);
+
 // функция автоподключения файлов по имени класса, где имя класса совпадает с именем файла
 spl_autoload_register(function($class){
-	$arr_path = [DIR];
-	echo "<p style='color:#23fd00'>Класс $class</p>";
-	$arr_file_dir = fileMap($arr_path);
+	global $arr_path;
+	echo "<p style='color:#23fd00'>Ссылка  $pat</p>";
 
-	echo "<p style='color:#23ff00'>Карта классов $arr_file_dir[$class]</p>";
-	var_dump($arr_file_dir);
-	include_once $arr_file_dir[$class];
+	echo "<p style='color:#23fd00'>Класс $class</p>";
+	
+	echo "<p style='color:#23ff00'>Карта классов $arr_path[$class]</p>";
+	var_dump($arr_path);
+	include_once $arr_path[$class];
 });
 
 (new controllers)->controller();

@@ -1,25 +1,19 @@
 <?php 
-// namespace app\controllers;
+namespace app\controllers;
 
-class controller
+class controllers
 {
-	public static $controller;
 
-	function controllerArr() 
+	function controller() 
 	{
 		echo "<br><p style='color:red'>Подключен Controller</p>";
-		self::$controller = [
-			"index"=>[
-				"view" => [
-					"1"=>DIR."app/view/headerView.php"
-				],
-				"classes"=>[
-
-				]
-
-			]
-		];
-		var_dump(self::$controller);
+		$echo = new app\modules\echoView;
+		$echo->echoViewStr();
+		// return [
+		// 	"index" => [
+		// 		"1" => $view["index"]
+		// 		],
+		// ]
 	}
 }
 

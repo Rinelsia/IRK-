@@ -77,7 +77,7 @@ spl_autoload_register(function($class){
 (new request)->url();
 
 // запуск контроллера
-// (new controllers)->controller();
+(new controller)->controllers();
 
 
 // Замер времени выполнения скрипта

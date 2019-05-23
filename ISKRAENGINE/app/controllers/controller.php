@@ -1,20 +1,19 @@
 <?php 
-namespace app\controllers;
+// namespace app\controllers;
 
-class controllers
+class controller extends ArrayController
 {
 
-	function controller() 
+	function controllers() 
 	{
-		echo "<br><p style='color:red'>Подключен Controller</p>";
-		$echo = new app\modules\echoView;
-		$echo->echoViewStr();
-		// return [
-		// 	"index" => [
-		// 		"1" => $view["index"]
-		// 		],
-		// ]
+		echo "<br><p style='color:red'>Подключен Controller - 1</p>";
+		var_dump($this->arrayControll());
 	}
+
 }
+/**
+* 
+*/
+
 
  ?>

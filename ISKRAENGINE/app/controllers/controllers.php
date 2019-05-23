@@ -20,7 +20,7 @@ class controllers
 
 	public function controller() 
 	{
-		echo "<br><p style='color:red'>Подключен Controller</p>";
+		echo "<br><p style='color:red'>Подключен Controller -2</p>";
 		$this->MapController();
 		
 		(new parseURL)->globServ();

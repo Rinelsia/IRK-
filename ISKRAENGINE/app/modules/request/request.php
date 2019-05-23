@@ -16,6 +16,7 @@ class Request
 	}
 	function url(){
 
+		echo "<p style='color: blue'>Подключен url<p>";
 		// получение значения из адресной строки и разбитие url на элементы (адрес и значение)
 		$url = ($_SERVER["REQUEST_URI"] === "/")? "index": (parse_url($_SERVER["REQUEST_URI"]));
 		
